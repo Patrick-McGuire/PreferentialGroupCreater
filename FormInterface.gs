@@ -32,6 +32,8 @@ function createForm() {
     .forForm(form)
     .onFormSubmit()
     .create();
+
+  openUrl(form.getPublishedUrl());
 }
 
 function onFormSubmitCustom(e) {
