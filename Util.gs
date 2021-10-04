@@ -1,3 +1,7 @@
+function setup() {
+  
+}
+
 function shuffle(array) {
   var currentIndex = array.length,  randomIndex;
 
