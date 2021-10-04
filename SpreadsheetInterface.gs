@@ -46,19 +46,20 @@ function onOpen(e) {
 
 function printGroups(groups) {
   var dataStruct = []
-  for(var i = 0; i < 23; i++) {
+  for(var i = 0; i < 25; i++) {
     dataStruct.push(["", "", "", "", "", "", "", "", "", "", "", ""]);
   }
   for(var i = 0; i < groups.groupnum; i++) { 
     var activeGroup = groups[""+i]; 
     for(var j = 0; j < activeGroup.length; j++) {
-      dataStruct[j][i] = activeGroup[j];
+      dataStruct[j+2][i] = activeGroup[j];
     }
-    dataStruct[8][i] = "" + groups.scores[""+i].like + " : " + groups.scores[""+i].dislike;
+    dataStruct[0][i] = "Like: " + groups.scores[""+i].like;
+    dataStruct[1][i] = "Dislike: " + groups.scores[""+i].dislike;
   }
 
   var sheet = SpreadsheetApp.getActiveSpreadsheet();
-  setValues(sheet, output, "A2", "L24", dataStruct);
+  setValues(sheet, output, "B4", "M28", dataStruct);
 }
 
 function printFromResponse(data) {
