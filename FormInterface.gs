@@ -18,11 +18,19 @@ function createForm() {
   form.addListItem()
     .setTitle(yourNameQuestion)
     .setChoiceValues(people)
+  
+  form.addSectionHeaderItem()
+    .setTitle('People you would like to work with');
+
   for(var i = 0; i < likeCount; i++) {
     form.addListItem()
     .setTitle(likeQuestion)
     .setChoiceValues(people)
   }
+
+  form.addSectionHeaderItem()
+    .setTitle('People you would rather not work with');
+    
   for(var i = 0; i < dislikeCount; i++) {
     form.addListItem()
     .setTitle(dislikeQuestion)
